@@ -5,4 +5,4 @@ before_install:
   - chmod +x gradlew
 
 install:
-  - ./gradlew :common:publishToMavenLocal -Pgroup=com.github.kanei0415 -Pversion=$JITPACK_VERSION
+  - ./gradlew :common:publishToMavenLocal -Pgroup=com.github.kjylab -Pversion=$JITPACK_VERSION
