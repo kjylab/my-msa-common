@@ -2,7 +2,6 @@ plugins {
     kotlin("jvm")
     kotlin("kapt")
     kotlin("plugin.jpa")
-
     id("java-library")
     id("maven-publish")
 }
@@ -11,13 +10,12 @@ group = "com.github.kjylab"
 version = "1.0.0"
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    api("org.springframework.boot:spring-boot-starter-data-jpa")
+    api("com.querydsl:querydsl-jpa:5.1.0:jakarta")
 
     implementation("org.springframework.boot:spring-boot-starter-web")
-
     runtimeOnly("com.h2database:h2")
 
-    implementation("com.querydsl:querydsl-jpa:5.1.0:jakarta")
     kapt("com.querydsl:querydsl-apt:5.1.0:jakarta")
     kapt("jakarta.persistence:jakarta.persistence-api")
     kapt("jakarta.annotation:jakarta.annotation-api")
