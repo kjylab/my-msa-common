@@ -21,6 +21,14 @@ dependencies {
     kapt("jakarta.annotation:jakarta.annotation-api")
 }
 
+configurations.all {
+    resolutionStrategy {
+        // "누가 뭐래도 이 버전과 이 규격(jakarta)만 사용해라!"라고 강제합니다.
+        force("com.querydsl:querydsl-jpa:5.1.0:jakarta")
+        force("com.querydsl:querydsl-apt:5.1.0:jakarta")
+    }
+}
+
 sourceSets {
     main {
         kotlin.srcDir("build/generated/source/kapt/main")
