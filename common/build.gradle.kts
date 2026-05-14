@@ -14,6 +14,10 @@ dependencies {
     api("org.springframework.boot:spring-boot-starter-data-jpa")
     api("com.querydsl:querydsl-jpa:5.1.0:jakarta")
 
+    configurations.all {
+        exclude(group = "com.querydsl", module = "querydsl-jpa")
+    }
+
     // kapt와 annotation-api는 빌드 시점에만 필요하므로 그대로 유지
     kapt("com.querydsl:querydsl-apt:5.1.0:jakarta")
     kapt("jakarta.persistence:jakarta.persistence-api")
