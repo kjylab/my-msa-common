@@ -30,10 +30,10 @@ jobs:
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Build
-        run: ./gradlew :common:build -x test -Pversion=${{ steps.ver.outputs.version }} --no-daemon
+        run: ./gradlew :common:build -x test -PpublishVersion=${{ steps.ver.outputs.version }} --no-daemon
 
       - name: Publish to GitHub Packages
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew :common:publish -Pversion=${{ steps.ver.outputs.version }} --no-daemon
+        run: ./gradlew :common:publish -PpublishVersion=${{ steps.ver.outputs.version }} --no-daemon

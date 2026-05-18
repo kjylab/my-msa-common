@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.github.kjylab"
-version = "1.0.0"
+version = (project.findProperty("publishVersion") as? String) ?: "1.0.0"
 
 dependencies {
     api("org.springframework.boot:spring-boot-starter-data-jpa")
